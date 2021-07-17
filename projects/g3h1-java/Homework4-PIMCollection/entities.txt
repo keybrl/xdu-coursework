@@ -1,0 +1,6 @@
+TODO urgent 04/22/2018 Submit Java homework.
+TODO normal 11/30/2018 晚上Java第4次上机
+NOTE normal 11/30/2018 汝等不得制造像人一样思维的机器
+APPOINTMENT normal 04/20/2018 上午要去上李老师的课
+CONTACT boring 11/30/2018 first-name:Yang-hao last-name:LUO emaIl:keyboard-l@outlook.com
+NOTE whatever 11/30/2018 what
