@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "57ee09b4-3da4-496c-8382-20a9a8eb7614",
+		"name": "cc-get_places",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "使用GET方法",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://cc.keybrl.com/get_places?eid=33041100005310&start_time=1496289399&end_time=1496290344",
+					"protocol": "http",
+					"host": [
+						"cc",
+						"keybrl",
+						"com"
+					],
+					"path": [
+						"get_places"
+					],
+					"query": [
+						{
+							"key": "eid",
+							"value": "33041100005310",
+							"description": "车辆电子车牌"
+						},
+						{
+							"key": "start_time",
+							"value": "1496289399",
+							"description": "开始时间戳"
+						},
+						{
+							"key": "end_time",
+							"value": "1496290344",
+							"description": "结束时间戳"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用POST方法-JSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"eid\": \"33041100005310\",\n\t\"start_time\": \"1496289399\",\n\t\"end_time\": \"1496290344\"\n}"
+				},
+				"url": "http://cc.keybrl.com/get_places"
+			},
+			"response": []
+		},
+		{
+			"name": "使用POST方法-form_data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "eid",
+							"value": "33041100005310",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "1496289399",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "1496290344",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://cc.keybrl.com/get_places"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0cc2bb35-09b3-4eb7-ad90-fcf7a079ed25",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "76d79f32-8b7a-4f20-9908-e2c385960d55",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+  "json_to_sqlite": {
+    "json_path": "../data/record.json",
+    "sqlite_path": "../data/record.sqlite.db"
+  },
+  "sqlite_to_hbase": {
+    "sqlite_path": "../data/record.sqlite.db",
+    "hbase_host": "http://cc-keybrl-node0:2048"
+  },
+  "json_to_redis": {
+    "json_path": "../data/record.json",
+    "redis_host": "cc-keybrl-node1",
+    "redis_port": 6379,
+    "redis_passwd": "12345qwert",
+    "redis_db": 0,
+    "redis_key": "rdb"
+  },
+  "redis_to_hbase": {
+    "redis_host": "cc-keybrl-node1",
+    "redis_port": 6379,
+    "redis_passwd": "12345qwert",
+    "redis_db": 0,
+    "redis_key": "rdb",
+    "redis_channel": "SE-5035",
+    "hbase_host": "http://cc-keybrl-node0:2048"
+  },
+  "get_places": {
+    "hbase_host": "http://cc-keybrl-node0:2048"
+  },
+  "hbase_to_sqlite": {
+    "hbase_host": "http://cc-keybrl-node0:2048",
+    "sqlite_path": "../data/record.sqlite.db"
+  }
+}

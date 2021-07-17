@@ -1,0 +1,10 @@
+{
+    "server": "0.0.0.0",
+    "server_port": 2000,
+    "local_address": "127.0.0.1",
+    "local_port": 8080,
+    "password": "12345qwert",
+    "method": "aes-256-cfb",
+    "timeout": 300,
+    "fast_open": true
+}
