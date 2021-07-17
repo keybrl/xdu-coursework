@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/result/result",
+    "pages/history/history"
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "navigationBarTitleText": "KeybrlOCR",
+    "navigationBarBackgroundColor": "#333438",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "backgroundColorTop": "#ffffff",
+    "backgroundColorBottom": "#ffffff",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50,
+    "pageOrientation": "portrait"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

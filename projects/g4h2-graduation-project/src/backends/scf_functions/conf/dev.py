@@ -1,0 +1,7 @@
+IMAGES_ROOT = 'dev/images'
+RESULTS_ROOT = 'dev/results'
+RESULT_URL_FORMATTER = 'https://ocr.keyboardluo.com/test/dev_check_result_{f_id}?img_id={id}'
+IMG_DIRECT_URL_FORMATTER = 'https://cdn.ocr.keyboardluo.com/dev/images/{id}'
+RESULT_DIRECT_URL_FORMATER = 'https://cdn.ocr.keyboardluo.com/dev/results/{id}.json'
+SUBMIT_IMG_TO_OCR_FUNC_NAME_FORMATTER = 'dev_submit_img_to_ocr_{f_id}'
+SUBMIT_IMG_TO_OCR_FUNC_NAMESPACE = 'dev-keybrlocr'

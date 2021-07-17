@@ -1,0 +1,40 @@
+<view class="main">
+  <view class="section" aria-hidden="true">
+    <canvas class="result-marks-canvas" canvas-id="resultMarks" role="none"></canvas>
+    <image id="result-image" class="target-img" src="{{imgPath}}" mode="aspectFit"></image>
+  </view>
+
+  <view wx:if="{{detailedResult !== null}}">
+    <view class="section" aria-label="文字检测结果：{{ detailedResult.length > 0 ? '成功检测到文字' : '未能检测到文字' }}">
+      <view class="paragraph" aria-hidden="true">
+        <text>检测到文字：</text>
+        <icon class="icon" wx:if="{{detailedResult.length}}" type="success" color="#09bb07" size="28px"></icon>
+        <icon class="icon" wx:else type="clear" color="#f76260" size="28px"></icon>
+      </view>
+    </view>
+
+    <view class="section" wx:if="{{detailedResult.length}}">
+      <view class="paragraph">
+        <text aria-hidden="true">识别结果：</text>
+        <button
+          class="btn-copy"
+          plain="{{true}}"
+          size="mini"
+          bindtap="handleCopyResult"
+          aria-role="button"
+          aria-label="复制按钮。激活后可复制文字识别结果。">
+          复制
+        </button>
+      </view>
+      <view class="paragraph summary-result-container" aria-label="识别结果：{{summaryResult}}">
+        <text class="summary-result-content" selectable="{{true}}">{{summaryResult}}</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="paragraph">
+        <button type="primary" bindtap="handleBackHome" aria-role="button" aria-label="重新选择图片按钮。激活后可返回首页。">重新选择图片</button>
+      </view>
+    </view>
+  </view>
+</view>

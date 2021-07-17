@@ -1,0 +1,16 @@
+<view class="histories-container">
+  <view class="history-item" wx:for="{{histories}}" wx:key="imgUrl">
+    <image
+      id="{{index}}"
+      class="history-item-img"
+      src="{{item.imgUrl}}"
+      mode="aspectFill"
+      aria-role="button"
+      aria-label="历史结果 {{ index + 1 }} ，双击后可查看结果详情，双击后长按可删除该条记录。"
+      bindtap="handleSwitchToResult"
+      bindlongtap="handleDelHistory">
+    </image>
+  </view>
+
+  <view class="no-history-tips" wx:if="{{histories === null || histories.length === 0}}">暂无历史记录</view>
+</view>

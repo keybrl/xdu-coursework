@@ -1,0 +1,10 @@
+.idea/
+venv/
+__pycache__/
+*.pyc
+.coverage
+htmlcov/
+/scf_functions/libs/
+
+# secrets
+secrets.py

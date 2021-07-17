@@ -1,0 +1,13 @@
+.preview-img {
+  width: 100%;
+  height: 40vh;
+}
+.tips {
+  text-align: center;
+}
+.tips.secondary {
+  font-size: 11pt;
+}
+.btn-group-item {
+  padding: 5px 0;
+}

@@ -1,0 +1,10 @@
+.main {
+  padding-bottom: 50px;
+}
+.section {
+  padding: 20rpx 15rpx;
+}
+.paragraph {
+  margin-bottom: 5rpx;
+  font-size: 14pt;
+}

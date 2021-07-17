@@ -1,0 +1,14 @@
+__pycache__
+.coverage
+htmlcov
+
+/ignore
+/test_data
+/utils
+/handler_check_result.py
+/handler_trigger_submit_img_to_ocr.py
+/handler_upload_img_to_cos.py
+/README.md
+/template.yaml
+/release_template.yaml
+/tests.py

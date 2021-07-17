@@ -1,0 +1,429 @@
+# 该模板用于部署开发环境
+
+Resources:
+  dev-keybrlocr:
+    Type: 'TencentCloud::Serverless::Namespace'
+    dev_upload_img_to_cos:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_upload_img_to_cos.main_handler'
+        Description: '[dev] 该函数用于将图像上传至 COS'
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_upload_img_to_cos_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'POST'
+              IntegratedResponse: true
+    dev_trigger_submit_img_to_ocr:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_trigger_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于分配图片到 dev_submit_img_to_ocr_x 函数'
+        Events:
+          keybrlocr-1253422097.cos.ap-guangzhou.myqcloud.com:
+            Type: 'COS'
+            Properties:
+              Enable: true
+              Bucket: 'keybrlocr-1253422097.cos.ap-guangzhou.myqcloud.com'
+              Events: 'cos:ObjectCreated:*'
+              Filter:
+                Prefix: 'dev/images/'
+                Suffix: ''
+    dev_submit_img_to_ocr_0:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_1:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_2:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_3:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_4:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_5:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_6:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_7:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_8:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_9:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_a:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_b:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_c:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_d:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_e:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_submit_img_to_ocr_f:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_test_submit_img_to_ocr.main_handler'
+        Description: '[dev] 该函数用于将 COS 上的图像提交到 OCR 服务'
+        Timeout: 15
+    dev_check_result_0:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_0_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_1:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_1_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_2:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_2_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_3:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_3_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_4:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_4_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_5:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_5_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_6:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_6_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_7:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_7_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_8:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_8_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_9:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_9_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_a:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_a_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_b:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_b_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_c:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_c_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_d:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_d_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_e:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_e_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+    dev_check_result_f:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Handler: 'handler_check_result.main_handler'
+        Description: '[dev] 结果查询函数'
+        Timeout: 30  # 比提交到 OCR 的函数超时时间略多，保证能够等到结果
+        VpcConfig:
+          VpcId: 'vpc-6j69eqy1'
+          SubnetId: 'subnet-p31l2sgq'
+        Events:
+          dev_check_result_f_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-m314dlr8'
+              StageName: 'test'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+Globals:
+  Function:
+    Type: 'Event'
+    Runtime: 'Python3.6'
+    CodeUri: './'
+    Role: 'SCF_QcsRole'
+    Timeout: 5
+    MemorySize: 128
